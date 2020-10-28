@@ -1,0 +1,63 @@
+<div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+    <div class="iq-card-header d-flex justify-content-between">
+       <div class="iq-header-title">
+          <h4 class="card-title">Liste des Appels</h4>
+       </div> 
+    </div>
+    <div class="iq-card-body">
+      <div class="table-responsive">
+         <table class="table mb-0 table-borderless">
+            <thead>
+               <tr>
+                  <th scope="col">Réclamant</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Date Envoie</th>
+                  <th scope="col">Contenue Appel</th> 
+                  <th scope="col">Action</th> 
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let a of appels">
+                  <td>{{a.nom}} {{a.prenom}}</td>
+                  <td><span class="badge badge-primary">{{a.role}}</span></td>
+                  <td>{{a.date_appel}}</td>
+                  <td>{{a.contenue_appel}}</td>
+                  <td>
+                     <button type="button" class="btn btn-primary btn-sm mr-2" (click)="openModal(infoModal, a)"><i class="fa fa-eye"></i></button>
+                  </td>
+               </tr> 
+            </tbody>
+         </table>
+      </div>
+    </div>
+ </div>
+
+
+ <ng-template #infoModal let-modal>
+   <div class="modal-header">
+    <h5 class="modal-title" id="editProfileLabel">Détails Appel</h5> 
+   </div>
+   
+   <div class="modal-body"> 
+      <div class="user-profile text-center">
+         <img src="assets/images/ecole.png" alt="Polytech INTL"  width="220">
+      </div>
+      <div class="text-center mt-3">
+         <h4><b>{{modalContent.nom}} {{modalContent.prenom}}</b></h4>
+         <span class="badge border border-primary text-primary">{{modalContent.role}}</span>
+         <p><u>Date Envoie </u>: {{ modalContent.date_envoie }}<br>
+         <u>Sujet </u>: {{ modalContent.sujet }}<br>
+         <u>Contenue Réclamation</u>: {{modalContent.contenue_reclamation }}</p> 
+         ***********************************<br>
+         <p><u>Date Réponse </u>: {{ modalContent.date_reponse }}<br> 
+            <u>Contenue Réponse</u>: {{modalContent.contenue_reponse }}</p> 
+         ***********************************<br>   
+         <p><u>Date Appel </u>: {{ modalContent.date_appel }}<br> 
+            <u>Contenue Appel</u>: {{modalContent.contenue_appel }}</p> 
+      </div>
+    <br>  
+     <div class="modal-footer">
+      <button type="button" class="btn btn-dark" (click)="modal.dismiss()">Fermer</button> 
+     </div> 
+   </div>
+  </ng-template>

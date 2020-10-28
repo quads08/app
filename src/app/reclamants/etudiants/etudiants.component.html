@@ -1,0 +1,29 @@
+<div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+    <div class="iq-card-header d-flex justify-content-between">
+       <div class="iq-header-title">
+          <h4 class="card-title">Liste des Etudiants</h4>
+       </div> 
+    </div>
+    <div class="iq-card-body">
+      <div class="table-responsive">
+         <table class="table mb-0 table-borderless">
+            <thead>
+               <tr>
+                  <th scope="col">Réclamant</th>
+                  <th scope="col">Téléphone</th>
+                  <th scope="col">E-mail</th>
+                  <th scope="col">Groupe</th> 
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let r of etudiants">
+                  <td>{{r.nom}} {{r.prenom}}</td>
+                  <td>{{r.tel}}</td>
+                  <td>{{r.email}}</td> 
+                  <td><span class="badge badge-primary">{{r.groupe}}</span></td>
+               </tr> 
+            </tbody>
+         </table>
+      </div>
+    </div>
+ </div>

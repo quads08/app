@@ -1,0 +1,28 @@
+<div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+    <div class="iq-card-header d-flex justify-content-between">
+        <div class="iq-header-title">
+            <h4 class="card-title">Ajout d'une Réclamation</h4>
+        </div>
+    </div>
+    <div class="iq-card-body">
+        <div class="table-responsive">
+            <form [formGroup]="addREC" (ngSubmit)="saveReclamantion()">
+                <div class="form-group">
+                    <label for="ss">Sujet :</label>
+                    <input type="text" id="ss" class="form-control"name="sujet" formControlName="sujet" />
+                    <div *ngIf="sujet.touched && sujet.invalid">
+                        <small *ngIf="sujet.errors.required" class="text-danger">Sujet  est Obilgatoire<br></small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cc">Contenue :</label>
+                    <textarea type="text" id="cc" rows="5" class="form-control" name="contenue" formControlName="contenue" ></textarea>
+                    <div *ngIf="contenue.touched && contenue.invalid">
+                        <small *ngIf="contenue.errors.required" class="text-danger">Contenue  est Obilgatoire<br></small>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="addREC.invalid" class="btn btn-primary">Envoyer</button> 
+            </form>
+        </div>
+    </div>
+</div>

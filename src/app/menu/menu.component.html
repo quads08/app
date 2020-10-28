@@ -1,0 +1,51 @@
+<!-- Sidebar  -->
+<div class="iq-sidebar">
+    <div class="iq-sidebar-logo d-flex justify-content-between">
+       <a href="#">
+       <img src="assets/images/ecole.png" class="img-fluid" alt="">
+       <span>PI</span>
+       </a>
+       <div class="iq-menu-bt-sidebar">
+          <div class="iq-menu-bt align-self-center">
+             <div class="wrapper-menu">
+                <div class="main-circle"><i class="ri-more-fill"></i></div>
+                   <div class="hover-circle"><i class="ri-more-2-fill"></i></div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <div id="sidebar-scrollbar">
+       <nav class="iq-sidebar-menu">
+          <ul id="iq-sidebar-toggle" class="iq-menu">
+             <li class="iq-menu-title"><i class="ri-subtraNct-line"></i><span>Menu Principale</span></li>
+             <li *ngIf="isReclamant">
+                <a routerLink="/home/reclamation/add" class="iq-waves-effect"><i class="fa fa-envelope"></i><span>Envoyer Réclamation</span></a>
+             </li>
+             <li *ngIf="isReclamant">
+               <a routerLink="/home/reclamation/my" class="iq-waves-effect"><i class="fa fa-list"></i><span>Mes Réclamations</span></a>
+            </li> 
+             
+            <li *ngIf="isAdmin">
+              <a routerLink="/home/reclamation/all" class="iq-waves-effect"><i class="fa fa-list"></i><span>Liste Réclamations</span></a>
+           </li>
+            <li>
+               <a routerLink="/home/reponse/all" class="iq-waves-effect"><i class="fa fa-share-square"></i><span>Réponses</span></a>
+            </li>
+            <li>
+               <a routerLink="/home/appel/all" class="iq-waves-effect"><i class="fa fa-paper-plane"></i><span>Appels</span></a>
+            </li>     
+             <li  *ngIf="isAdmin">
+                <a href="#usrbox" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-mail-open-fill"></i><span>Réclamants</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                <ul id="usrbox" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                   <li><a routerLink="/home/reclamant/etudiants"><i class="ri-inbox-fill"></i>Etudiant</a></li>
+                   <li><a routerLink="/home/reclamant/parents"><i class="ri-edit-2-fill"></i>Parent</a></li>
+                   <li><a routerLink="/home/reclamant/enseignants"><i class="ri-edit-2-fill"></i>Enseignant</a></li>
+                   <li><a routerLink="/home/reclamant/entreprises"><i class="ri-edit-2-fill"></i>Entreprise</a></li>
+                </ul>
+             </li> 
+          </ul>
+       </nav>
+       <div class="p-3"></div>
+    </div>
+ </div>
+ <!-- Responsive Breadcrumb End-->
